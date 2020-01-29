@@ -7,11 +7,18 @@ height: 20rem;
 margin: 2rem auto 4rem auto;
 padding-bottom: 2rem; 
 border-bottom: 2px solid ${(props) => props.theme.colors.white};
+${phoneQuery`
+    width: 350px;
+    `};
 `;
 
 export const SlideBox = styled.div`
 width: calc(100%/4); 
-height: 20rem; 
+height: 20rem;
+${phoneQuery`
+
+    `};
+ 
 `;
 
 export const H1 = styled.h1`
@@ -22,10 +29,16 @@ margin-top: 5rem;
 `;
 
 export const Arrow = styled.img`
-width: 50px;
+width: 6vmin;
+height: 6vmin;
 background-color: ${(props) => props.theme.colors.grey};
-height: 50px;
 padding: 6px; 
 align-self: center; 
-border-radius: 50%; 
+border-radius: 50%;
+    ${phoneQuery`
+    width: 0; 
+    height: 0;
+    opacity: 0;
+
+    `};
 `;

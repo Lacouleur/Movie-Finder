@@ -3,10 +3,12 @@ export const getYear = (DateStringToTransform) => {
   return DateConverted.getFullYear();
 };
 
-export const checkWindowSize = (windowWidth) => {
-  console.log("holla pas dedans"); 
-  if (windowWidth < 617) {
-    console.log("holla, DEDANS !!"); 
+export const checkWindowSize = (width) => {
+  if (width < 839) {
     return 2;
+  } if (width > 840 && width < 1000) {
+    return 3;
+  } if (width > 1000) {
+    return 4;
   }
 };

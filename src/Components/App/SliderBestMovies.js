@@ -4,34 +4,28 @@ import {
   SliderContainer, H1, Arrow, SlideBox,
 } from '../StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
 import { getBestMovies } from '../../services/client';
-import { getYear } from '../../services/helper';
+import { getYear, checkWindowSize } from '../../services/helper';
 import { ThumbMovie, MovieTitle, MovieDate } from '../StyledComponents/Commons/Commons';
 import 'slick-carousel/slick/slick-theme.css';
 import SlickStyled from '../StyledComponents/SliderBestMovies/SlickStyled';
 
 const SliderBestMovies = () => {
   const [bestMovies, setBestMovies] = useState();
-  const [slideToShow, setSlideToShow] = useState(4);
-  const [width, setWidth] = React.useState(window.innerWidth);
+  const [slideToShow, setSlideToShow] = useState(checkWindowSize(window.innerWidth));
 
   useEffect(() => {
     getBestMovies().then(setBestMovies);
   }, []);
 
-  React.useEffect(() => {
-    const checkWindowSize = () => {
-      setWidth(window.innerWidth); 
-      if (width < 839 ) {
-        setSlideToShow(2);
-      } else if (width > 840 && width < 1000 ) {
-        setSlideToShow(3);
-      } else if (width > 1000 ) {
-        setSlideToShow(4);
-      }
+  useEffect(() => {
+    const changeListener = () => {
+      setSlideToShow(checkWindowSize(window.innerWidth));
     };
-
-    window.addEventListener('resize', checkWindowSize)
-  })
+    window.addEventListener('resize', changeListener);
+    return () => {
+      window.removeEventListener('resize', changeListener);
+    };
+  }, [window.innerWidth]);
 
   const settings = {
     dots: false,
@@ -56,7 +50,7 @@ const SliderBestMovies = () => {
           <Slider {...settings}>
             {bestMovies && bestMovies.map((movie) => (
               <SlideBox>
-                <ThumbMovie margin="auto" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
+                <ThumbMovie marginLeft="25%" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
                 <MovieTitle marginLeft="25%">{movie.title}</MovieTitle>
                 <MovieDate marginLeft="25%">
                   {getYear(movie.release_date)}
