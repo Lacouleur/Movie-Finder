@@ -23,8 +23,6 @@ const TenBestMovies = () => {
     return bestMovies.slice(firstIndex, firstIndex + 4);
   };
 
-  console.log({startIndex});
-
   return (
     <>
       <H1>Les 10 meilleurs films</H1>

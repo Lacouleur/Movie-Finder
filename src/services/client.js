@@ -4,7 +4,7 @@ const ApiKey = '1b35457e95b53a129af7ae00895df529';
 
 export const searchForMovie = async (userSearch) => axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query='${userSearch}'`,
   {
-  }).then((res) => console.log(res.data)).catch(() => {
+  }).then((res) => res.data).catch(() => {
   const err = `An error occured in Api Request, please check your side and try again. Code error => ${err}`;
   return err;
 });

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import ReactPaginate from 'react-paginate';
+
+import { searchForMovie } from '../../services/client';
 import { discoverMovies } from '../../services/client';
+import { getYear } from '../../services/helper';
 import { ThumbMovie } from '../StyledComponents/Commons/Commons';
 import {
   ListContainer,
@@ -9,28 +13,27 @@ import {
   MovieTitle,
   MovieDate,
   Paging,
+  PagingArrow,
+  Paginate,
 } from '../StyledComponents/MovieList/MovieList';
 
-const Paginate = styled.div`
-color: pink;
-`;
-
-
-const getYear = (DateStringToTransform) => {
-  const DateConverted = new Date(DateStringToTransform);
-  return DateConverted.getFullYear();
-};
-
-const MovieList = () => {
+const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
   const [pagingInfos, setPagingInfos] = useState();
 
   useEffect(() => {
-    discoverMovies().then((res) => {
-      setPagingInfos(res);
-      setMovies(res.results);
-    });
-  }, []);
+    if (submitedSearch !== '') {
+      searchForMovie(submitedSearch).then((res) => {
+        setPagingInfos(res);
+        setMovies(res.results);
+      });
+    } else {
+      discoverMovies().then((res) => {
+        setPagingInfos(res);
+        setMovies(res.results);
+      });
+    }
+  }, [submitedSearch]);
 
   const handlePageClick = (data) => {
     discoverMovies(data.selected).then((res) => {
@@ -59,7 +62,12 @@ const MovieList = () => {
       {movies && (
       <Paginate>
         <ReactPaginate
-          previousLabel={<Paging>Billy Boy</Paging>}
+          previousLabel={<Paging><PagingArrow src="/icons-img/paginationpreviousarrow.svg" /></Paging>}
+          nextLabel={<Paging><PagingArrow src="/icons-img/paginationnextarrow.svg" /></Paging>}
+          pageClassName="pagingBox"
+          containerClassName="pagingContainer"
+          pageLinkClassName="pagingText"
+          activeClassName="pagingBoxactivePage"
           pageCount={pagingInfos.total_pages}
           marginPagesDisplayed={0}
           pageRangeDisplayed={9}
@@ -71,51 +79,12 @@ const MovieList = () => {
   );
 };
 
-const a: string = 1
+MovieList.propTypes = {
+  submitedSearch: PropTypes.string,
+};
+
+MovieList.defaultProps = {
+  submitedSearch: '',
+};
 
 export default MovieList;
-
-/*
-<PagingContainer>
-<Paging onClick={() => Displayed('previous')}><PagingArrow src="/icons-img/paginationpreviousarrow.svg" /></Paging>
-{ moviesList && pagingDisplayed.map((number) => (
-  <>
-    <Paging>
-      <PagingTxt>
-        {number}
-      </PagingTxt>
-    </Paging>
-  </>
-)) }
-<Paging onClick={() => Displayed('next')}><PagingArrow src="/icons-img/paginationnextarrow.svg" /></Paging>
-}
-</PagingContainer>
-*/
-
-/*
-const Displayed = (value) => {
-  console.log('Displayed -> value is', value);
-  const pagesTotal = moviesList.total_pages;
-  let min = 0;
-  let max = 9;
-  const numberTodisplay = [];
-  if (value === 'next' && max < pagesTotal) {
-    min += 1;
-    max += 1;
-    for (let i = min; i <= max; i += 1) {
-      numberTodisplay.push(i);
-    }
-    numberTodisplay.splice(0);
-    console.log("number to display -> ", numberTodisplay);
-
-  } else if (value === 'previous' && min > 0) {
-    min -= 1;
-    max -= 1;
-    console.log("Previous -> J'entre dans la seconde condition");
-    for (let i = min; i <= max; i += 1) {
-      numberTodisplay.push(i);
-      console.log('ligne 105 -> 2e boucle for');
-    }
-  }
-  setPagingDisplayed(numberTodisplay);
-}; */

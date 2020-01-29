@@ -10,22 +10,26 @@ import TenBestMovies from './TenBestMovie';
 import MovieList from './MovieList';
 
 const App = () => {
-  const [userSearch, setUserSearch] = useState();
+  const [search, setSearch] = useState();
+  const [submitedSearch, setSubmitedSearch] = useState();
+
+  console.log(search); 
 
   const handleSubmit = (e) => {
+    console.log("submited !!"); 
     e.preventDefault();
-    searchForMovie(userSearch);
+    setSubmitedSearch(search);
   };
 
   return (
     <AppContainer>
       <Logo src="/icons-img/logo.svg" />
       <form onSubmit={(e) => handleSubmit(e)}>
-        <SearchBar type="text" onChange={(e) => setUserSearch(e.target.value)} />
+        <SearchBar type="text" onChange={(e) => setSearch(e.target.value)} />
       </form>
       <Icon src="/icons-img/searchicon.svg" />
       <TenBestMovies />
-      <MovieList />
+      <MovieList submitedSearch={submitedSearch} />
     </AppContainer>
   );
 };
