@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { phoneQuery } from '../../../styles/media-queries';
 
 export const ListContainer = styled.div`
 width: calc(100vw - 6rem);
@@ -8,39 +9,56 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 padding: 0 3rem;
+${phoneQuery`
+min-width: 401px; 
+width: 100vw;
+height: 100%;
+margin-top: 10%;
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+padding: 0;
+`}
 `;
 
 export const MovieBox = styled.div`
 height: 400px;
 width: calc(160px + 6rem);
+${phoneQuery`
+height: 260px;
+width: 200px;
+`}
 `;
 
 export const Paginate = styled.div`
 color: pink;
-  .pagingBox{
-    width: 2rem;
-    height: 2rem;
-    padding: auto;
-    background: none;
-    border: 2px solid ${(props) => props.theme.colors.grey};
-    border-radius: 20%;
-    margin: 0; 
-    position: relative;
-    &-activePage{
-      background: ${(props) => props.theme.colors.grey};
-    }
-  }
-  .pagingContainer{
-    max-width: 50%;
-    height: 2rem; 
-    display: flex;
-    margin: auto; 
-    justify-content: center; 
-    flex-direction: row; 
-    justify-content: space-between;
-    padding-bottom: 1rem; 
-  }
+.pagingContainer{
+  max-width: 50%;
+  height: 2rem; 
+  display: flex;
+  margin: auto; 
+  justify-content: center; 
+  flex-direction: row; 
+  justify-content: space-between;
+  padding-bottom: 1rem; 
+}
 
+.pagingBox{
+  width: 2rem;
+  height: 2rem;
+  padding: auto;
+  background: hidden;
+  border: 2px solid ${(props) => props.theme.colors.grey};
+  border-radius: 20%;
+  margin: 0; 
+  position: relative;
+  &-activePage{
+    background: ${(props) => props.theme.colors.grey};
+  }
+  :hover{
+    cursor: pointer
+  }
+}
   .pagingText{  
     position: absolute;
     top: 50%;
@@ -48,7 +66,25 @@ color: pink;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: ${(props) => props.theme.colors.offWhite};
+    :hover{
+    cursor: pointer
     }
+  }
+  .break {
+    display: none; 
+  }
+
+    ${phoneQuery`
+.pagingContainer{
+  max-width: 266px;
+  height: 6rem;
+  flex-wrap: wrap;
+  justify-content: none;  
+}
+.pagingBox{
+  margin: 0 5px; 
+  }
+    `}
 `;
 
 export const Paging = styled.li`

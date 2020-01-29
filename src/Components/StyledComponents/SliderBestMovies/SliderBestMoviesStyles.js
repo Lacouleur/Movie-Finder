@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { phoneQuery } from '../../../styles/media-queries';
 
 export const SliderContainer = styled.div`
 width: calc(100vw - 15rem);   
@@ -16,7 +17,7 @@ height: 20rem;
 export const H1 = styled.h1`
 color : ${(props) => props.theme.colors.white};
 font-size : 1.5rem;
-margin-left: 20rem;
+margin-left: 6rem;
 margin-top: 5rem; 
 `;
 

@@ -1,12 +1,11 @@
-import { css } from '@emotion/styled';
+import { css } from '@emotion/core';
 
 const breakpoints = {
-  // minimal sizes
-  phoneSize: 415,
+  phoneSize: 617,
   desktopSize: 1200,
 };
 
-const phoneRule = `(min-width: ${breakpoints.phoneSize - 1}px)`;
+const phoneRule = `(max-width: ${breakpoints.phoneSize - 1}px)`;
 const desktopRule = `(min-width: ${breakpoints.desktopSize}px)`;
 
 const mediaQueries = {

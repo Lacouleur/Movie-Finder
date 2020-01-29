@@ -16,6 +16,7 @@ import {
   PagingArrow,
   Paginate,
 } from '../StyledComponents/MovieList/MovieList';
+import { H1 } from '../StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
 
 const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
@@ -44,12 +45,12 @@ const MovieList = ({ submitedSearch }) => {
 
   return (
     <>
+      <H1>Tous les films</H1>
       <ListContainer>
         {movies && movies.map((movie) => (
           <>
-            {/* console.log({movie}) */}
             <MovieBox>
-              <ThumbMovie marginTop="2rem" marginBottom="3rem" marginRight="3rem" marginLeft="3rem" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
+              <ThumbMovie marginTop="2rem" marginRight="3rem" marginLeft="3rem" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
               <MovieTitle>{movie.title}</MovieTitle>
               <MovieDate>
                 {getYear(movie.release_date)}
@@ -67,7 +68,7 @@ const MovieList = ({ submitedSearch }) => {
           pageClassName="pagingBox"
           containerClassName="pagingContainer"
           pageLinkClassName="pagingText"
-          activeClassName="pagingBoxactivePage"
+          activeClassName="pagingBox-activePage"
           pageCount={pagingInfos.total_pages}
           marginPagesDisplayed={0}
           pageRangeDisplayed={9}

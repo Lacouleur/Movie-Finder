@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled from '@emotion/styled';
+import React, { useState } from 'react';
 import AppContainer from '../StyledComponents/AppContainer';
-import Icon from '../StyledComponents/Header/Icon';
+import SearchIcon from '../StyledComponents/Header/Icon';
 import Logo from '../StyledComponents/Header/Logo';
 import SearchBar from '../StyledComponents/Header/SearchBar';
 import MovieList from './MovieList';
@@ -22,7 +21,7 @@ const App = () => {
       <form onSubmit={(e) => handleSubmit(e)}>
         <SearchBar type="text" onChange={(e) => setSearch(e.target.value)} />
       </form>
-      <Icon src="/icons-img/searchicon.svg" />
+      <SearchIcon src="/icons-img/searchicon.svg" />
       <SliderBestMovies />
       <MovieList submitedSearch={submitedSearch} />
     </AppContainer>
