@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
 import ReactPaginate from 'react-paginate';
 
-import { searchForMovie } from '../../services/client';
-import { discoverMovies } from '../../services/client';
+import { searchForMovie, discoverMovies } from '../../services/client';
 import { getYear } from '../../services/helper';
-import { ThumbMovie } from '../StyledComponents/Commons/Commons';
+import {
+  ThumbMovie,
+  MovieTitle,
+  MovieDate,
+} from '../StyledComponents/Commons/Commons';
 import {
   ListContainer,
   MovieBox,
-  MovieTitle,
-  MovieDate,
   Paging,
   PagingArrow,
   Paginate,

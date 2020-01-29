@@ -15,18 +15,6 @@ height: 400px;
 width: calc(160px + 6rem);
 `;
 
-export const MovieTitle = styled.p`
-color: ${(props) => props.theme.colors.white};
-font-weight: 700;
-margin-left: 3rem;
-`;
-
-export const MovieDate = styled.p`
-color: ${(props) => props.theme.colors.grey};
-margin-top: 0.7rem; 
-margin-left: 3rem;
-`;
-
 export const Paginate = styled.div`
 color: pink;
   .pagingBox{

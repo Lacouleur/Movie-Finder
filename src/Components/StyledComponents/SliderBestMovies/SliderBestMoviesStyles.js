@@ -1,11 +1,16 @@
 import styled from '@emotion/styled';
 
-export const BestMoviesContainer = styled.div`
+export const SliderContainer = styled.div`
+width: calc(100vw - 15rem);   
 height: 20rem;
-display: flex; 
-margin: 2rem 6rem 4rem 6rem;
-justify-content: center;
+margin: 2rem auto 4rem auto;
+padding-bottom: 2rem; 
 border-bottom: 2px solid ${(props) => props.theme.colors.white};
+`;
+
+export const SlideBox = styled.div`
+width: calc(100%/4); 
+height: 20rem; 
 `;
 
 export const H1 = styled.h1`
