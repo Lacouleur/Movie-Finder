@@ -3,6 +3,7 @@ import AppContainer from '../StyledComponents/AppContainer';
 import Header from './Header';
 import MovieList from './MovieList';
 import SliderBestMovies from './SliderBestMovies';
+import BgImg from '../StyledComponents/BgImg';
 
 const App = () => {
   const [search, setSearch] = useState();
@@ -10,6 +11,7 @@ const App = () => {
 
   return (
     <AppContainer>
+      <BgImg src="icons-img/backgroundimg.png" />
       <Header
         handleSubmit={(e) => {
           e.preventDefault();
