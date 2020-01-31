@@ -1,17 +1,15 @@
+/* eslint-disable import/prefer-default-export */
 import { css } from '@emotion/core';
 
 const breakpoints = {
-  phoneSize: 617,
-  desktopSize: 1200,
+  phoneSize: 1000,
 };
 
 const phoneRule = `(max-width: ${breakpoints.phoneSize - 1}px)`;
-const desktopRule = `(min-width: ${breakpoints.desktopSize}px)`;
 
 const mediaQueries = {
-// Doc for "specified size "  => sizeName: `@media screen and ${mediumRule} and ${mediumDownRule}`,
+// Reminder for "specified size "  => sizeName: `@media screen and ${mediumRule} and ${mediumDownRule}`,
   phone: `@media screen and ${phoneRule}`,
-  desktop: `@media screen and ${desktopRule}`,
 };
 
 const mediaQuery = (size) => (...args) => css`
@@ -20,4 +18,4 @@ const mediaQuery = (size) => (...args) => css`
   }
 `;
 export const phoneQuery = mediaQuery('phone');
-export const desktopQuery = mediaQuery('desktop');
+

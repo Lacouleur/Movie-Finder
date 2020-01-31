@@ -4,11 +4,9 @@ import { phoneQuery } from '../../../styles/media-queries';
 export const ThumbMovie = styled.img`
 height: 250px;
 width : 160px;
-margin-top: ${(props) => props.marginTop};
-margin-right: ${(props) => props.marginRight}; 
-margin-bottom: ${(props) => props.marginBottom};
-margin-left: ${(props) => props.marginLeft};
-margin:${(props) => props.margin};
+margin-top: 2rem;
+margin-right: 3rem; 
+margin-left: 3rem;
 border-radius: 25px; 
 align-self: center;
 

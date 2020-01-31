@@ -4,7 +4,7 @@ import { phoneQuery } from '../../styles/media-queries';
 
 const AppContainer = styled.div`
 margin: 0;
-background-color: ${((props) => props.theme.colors.darkBlue)};
+background-color: ${((props) => props.theme.colors.darkBlue)};                
 max-width: 100vw;
 position: relative;
 font-family: 'Roboto', sans-serif;

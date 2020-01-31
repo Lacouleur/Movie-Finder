@@ -5,28 +5,30 @@ import ReactPaginate from 'react-paginate';
 import { searchForMovie, discoverMovies } from '../../services/client';
 import { getYear } from '../../services/helper';
 import {
-  ThumbMovie,
-  MovieTitle,
-  MovieDate,
-} from '../StyledComponents/Commons/Commons';
-import {
-  ListContainer,
-  MovieBox,
   Paging,
   PagingArrow,
   Paginate,
+} from '../StyledComponents/MovieList/Paging';
+import {
+  ListContainer,
+  MovieBox,
+  ThumbMovie,
+  MovieTitle,
+  MovieDate,
+  H1,
 } from '../StyledComponents/MovieList/MovieList';
-import { H1 } from '../StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
 
 const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
   const [pagingInfos, setPagingInfos] = useState();
+  const [isSearch, setIsSearch] = useState('Tous les films');
 
   useEffect(() => {
     if (submitedSearch !== '') {
       searchForMovie(submitedSearch).then((res) => {
         setPagingInfos(res);
         setMovies(res.results);
+        setIsSearch('Recherche :');
       });
     } else {
       discoverMovies().then((res) => {
@@ -45,7 +47,7 @@ const MovieList = ({ submitedSearch }) => {
 
   return (
     <>
-      <H1>Tous les films</H1>
+      <H1>{`${isSearch}`}</H1>
       <ListContainer>
         {movies && movies.map((movie) => (
           <>
