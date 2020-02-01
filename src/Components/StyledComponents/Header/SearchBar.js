@@ -26,7 +26,6 @@ export const Form = styled.form`
 width: 17em;
 height: 2em; 
 align-self: center; 
-margin-right: 6rem; 
 position : relative;
 ${phoneQuery`
     margin-left: 10%;

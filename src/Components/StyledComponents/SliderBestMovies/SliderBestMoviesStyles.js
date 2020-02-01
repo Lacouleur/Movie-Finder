@@ -1,15 +1,16 @@
 import styled from '@emotion/styled';
 import { phoneQuery } from '../../../styles/media-queries';
 
-export const SliderContainer = styled.div`   
+export const SliderContainer = styled.div`
+width: 80%   
 margin: 2rem 10% 4rem 10%;
-padding-bottom: 10%; 
+padding-bottom: 5%; 
+margin-bottom:5%;
 border-bottom: 2px solid ${(props) => props.theme.colors.offWhite};
 
 ${phoneQuery`
     overflow: hidden;
     width: 100%;
-    margin: 4rem auto 4rem auto;
 `};
 `;
 

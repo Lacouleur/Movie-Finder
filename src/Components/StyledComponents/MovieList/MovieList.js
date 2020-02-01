@@ -3,9 +3,9 @@ import { phoneQuery } from '../../../styles/media-queries';
 
 export const ListContainer = styled.div`
 height: 100%;
-margin : 2rem 10%;
+max-width: 80vw;
+margin : 2rem 0;
 display: flex;
-align-self: center;
 justify-content: space-between;
 flex-wrap: wrap;
 overflow: hidden;
@@ -19,23 +19,24 @@ margin-bottom: 10%;
 `;
 
 export const ThumbMovie = styled.img`
-width : 100%;
+width : 80%;
 border-radius: 25px; 
-align-self: center;
+margin: 0 10%;
+
 `;
 
 export const MovieTitle = styled.p`
 color: ${(props) => props.theme.colors.white};
 font-weight: 700;
-margin-top: 1rem;
-max-width: 160px;
+margin: 1rem 10%;
+max-width: 80%;
 ${phoneQuery`
 max-width: 110px;
   `}
 `;
 
 export const H1 = styled.h1`
-margin-left: 10%;
+margin-left: 0;
 font-size: 4vmin;
 color : ${(props) => props.theme.colors.white};
 `;
@@ -43,4 +44,5 @@ color : ${(props) => props.theme.colors.white};
 export const MovieDate = styled.p`
 color: ${(props) => props.theme.colors.offWhite};
 margin-top: 0.7rem; 
+margin: 0 10%;
 `;

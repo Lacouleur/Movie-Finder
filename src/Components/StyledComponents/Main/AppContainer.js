@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { phoneQuery } from '../../styles/media-queries';
+import { phoneQuery } from '../../../styles/media-queries';
 
 
 const AppContainer = styled.div`

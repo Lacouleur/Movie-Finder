@@ -6,7 +6,6 @@ const Logo = styled.img`
   width: 20%;
   min-width: 200px; 
   max-width: 300px;
-  padding-left: 6em;
   ${phoneQuery`
     margin-bottom: 2em;
     margin-top: 4em;

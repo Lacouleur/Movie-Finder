@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const HeaderContainer = styled.div`
-width: 100vw; 
+width: 100%; 
 height: 10vw; 
 min-height: 100px;
 display: flex; 
