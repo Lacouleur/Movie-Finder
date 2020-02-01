@@ -37,7 +37,7 @@ max-width: 110px;
 
 export const H1 = styled.h1`
 margin-left: 0;
-font-size: 4vmin;
+font-size: 2vmin;
 color : ${(props) => props.theme.colors.white};
 `;
 

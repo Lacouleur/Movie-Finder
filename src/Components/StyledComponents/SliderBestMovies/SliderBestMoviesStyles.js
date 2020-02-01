@@ -19,7 +19,7 @@ width: 100%;
 `;
 
 export const H1 = styled.h1`
-font-size: 4vmin;
+font-size: 2.5vmin;
 color : ${(props) => props.theme.colors.white};
 ${phoneQuery`
 padding-left: 10%;
