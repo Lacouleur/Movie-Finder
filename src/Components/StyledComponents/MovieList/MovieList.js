@@ -3,8 +3,9 @@ import { phoneQuery } from '../../../styles/media-queries';
 
 export const ListContainer = styled.div`
 height: 100%;
+width : 90%;
 max-width: 80vw;
-margin : 2rem 0;
+margin : 2rem auto;
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
@@ -36,9 +37,12 @@ max-width: 110px;
 `;
 
 export const H1 = styled.h1`
-margin-left: 0;
+margin-left: 10%;
 font-size: 2vmin;
 color : ${(props) => props.theme.colors.white};
+${phoneQuery`
+margin-left: 10%;
+  `}
 `;
 
 export const MovieDate = styled.p`

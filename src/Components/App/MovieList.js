@@ -63,20 +63,20 @@ const MovieList = ({ submitedSearch }) => {
       </ListContainer>
 
       {movies && (
-      <Paginate>
-        <ReactPaginate
-          previousLabel={<Paging><PagingArrow src="/icons-img/paginationpreviousarrow.svg" /></Paging>}
-          nextLabel={<Paging><PagingArrow src="/icons-img/paginationnextarrow.svg" /></Paging>}
-          pageClassName="pagingBox"
-          containerClassName="pagingContainer"
-          pageLinkClassName="pagingText"
-          activeClassName="pagingBox-activePage"
-          pageCount={pagingInfos.total_pages}
-          marginPagesDisplayed={0}
-          pageRangeDisplayed={9}
-          onPageChange={handlePageClick}
-        />
-      </Paginate>
+        <Paginate>
+          <ReactPaginate
+            previousLabel={<Paging><PagingArrow src="/icons-img/paginationpreviousarrow.svg" /></Paging>}
+            nextLabel={<Paging><PagingArrow src="/icons-img/paginationnextarrow.svg" /></Paging>}
+            pageClassName="pagingBox"
+            containerClassName="pagingContainer"
+            pageLinkClassName="pagingText"
+            activeClassName="pagingBox-activePage"
+            pageCount={pagingInfos.total_pages}
+            marginPagesDisplayed={0}
+            pageRangeDisplayed={9}
+            onPageChange={handlePageClick}
+          />
+        </Paginate>
       )}
     </>
   );

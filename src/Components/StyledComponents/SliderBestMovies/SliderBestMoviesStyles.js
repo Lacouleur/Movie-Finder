@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { phoneQuery } from '../../../styles/media-queries';
 
 export const SliderContainer = styled.div`
-width: 80%   
+width: 80%;   
 margin: 2rem 10% 4rem 10%;
 padding-bottom: 5%; 
 margin-bottom:5%;
