@@ -10,7 +10,6 @@ border-bottom: 2px solid ${(props) => props.theme.colors.offWhite};
 
 ${phoneQuery`
     overflow: hidden;
-    width: 100%;
 `};
 `;
 
