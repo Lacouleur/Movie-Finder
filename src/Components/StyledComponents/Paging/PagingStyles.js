@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 import { phoneQuery } from '../../../styles/media-queries';
 
-export const Paginate = styled.div`
+export const PaginateStyle = styled.div`
 color: pink;
+a:focus {
+    outline:0;
+}
 .pagingContainer{
   max-width: 50%;
-  height: 2rem; 
+  height:2.5em; 
   display: flex;
   margin: auto; 
   justify-content: center; 
@@ -15,10 +18,10 @@ color: pink;
 }
 
 .pagingBox{
-  width: 2rem;
-  height: 2rem;
+  width:2.5em;
+  height:2.5em;
   padding: auto;
-  background: hidden;
+  background-color: hidden;
   border: 2px solid ${(props) => props.theme.colors.grey};
   border-radius: 20%;
   margin: 0; 
@@ -30,7 +33,8 @@ color: pink;
     cursor: pointer
   }
 }
-  .pagingText{  
+  .pagingText{ 
+    padding:1.25em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,8 +63,8 @@ color: pink;
 `;
 
 export const Paging = styled.li`
-width: 2rem;
-height: 2rem;
+width:2.5em;
+height:2.5em;
 padding: auto;
 background: none;
 border: 2px solid ${(props) => props.theme.colors.grey};
