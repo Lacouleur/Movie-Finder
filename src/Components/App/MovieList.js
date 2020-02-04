@@ -17,6 +17,7 @@ import {
   MovieDate,
   H1,
 } from '../StyledComponents/MovieList/MovieList';
+import SortButtons from './SortButtons';
 
 const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
@@ -39,15 +40,17 @@ const MovieList = ({ submitedSearch }) => {
   }, [submitedSearch]);
 
   const handlePageClick = (data) => {
-    discoverMovies(data.selected).then((res) => {
+    discoverMovies(data.selected + 1 ).then((res) => {
+      console.log(data.selected);
       setPagingInfos(res);
-      setMovies(res.results);
+      setMovies(res.results.slice(0, 11));
     });
   };
 
   return (
     <>
       <H1>{`${isSearch}`}</H1>
+      <SortButtons />
       <ListContainer>
         {movies && movies.map((movie) => (
           <>
@@ -73,8 +76,9 @@ const MovieList = ({ submitedSearch }) => {
             activeClassName="pagingBox-activePage"
             pageCount={pagingInfos.total_pages}
             marginPagesDisplayed={0}
-            pageRangeDisplayed={9}
+            pageRangeDisplayed={10}
             onPageChange={handlePageClick}
+            initialPage={0}
           />
         </Paginate>
       )}
