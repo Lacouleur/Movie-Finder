@@ -13,7 +13,7 @@ const App = () => {
   return (
     <AppContainer>
       <Sizer>
-        <BgImg src="icons-img/backgroundimg.png" />
+        <BgImg />
         <Header
           handleSubmit={(e) => {
             e.preventDefault();
