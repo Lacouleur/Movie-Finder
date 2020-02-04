@@ -10,7 +10,6 @@ position: relative;
 font-family: 'Roboto', sans-serif;
 line-height: 17px; 
 font-size: 14px; 
-
 ${phoneQuery`
 font-size: 1rem;
 overflow: hidden;
