@@ -4,33 +4,32 @@ import { phoneQuery } from '../../../styles/media-queries';
 export const SearchBar = styled.input`
 width: calc(17em - 15%);
 height: 2em; 
-background-color: ${((props) => props.theme.colors.grey)};
+background: none;
+padding-left: 2.5rem;
 border : none; 
-border-radius: 25px;
-padding-left: 15%;
 color: ${((props) => props.theme.colors.white)};
   ::placeholder {
     opacity: .2;
   }
 ${phoneQuery`
-    width: 90%;
-    max-width: 100%;
-    height: 2.5rem;
-    padding-left: 5%;
-    padding-right: 15%;
-    font-size: 1.5em;
+    padding-left: 1rem;
+    width: 100%;
+    height: 40px;
+    line-height: 14px; 
+    font-size: 12px; 
   `}
 `;
 
 export const Form = styled.form`
+background-color: ${((props) => props.theme.colors.grey)};
+border-radius: 25px;
 width: 17em;
 height: 2em; 
+margin-top: 2rem;
 align-self: center; 
 position : relative;
 ${phoneQuery`
-    margin-left: 10%;
-    margin-right: 15%;
-    width: 100vw;
+    width: 315px;
     height: 2.5rem;
   `}
 `;
@@ -43,7 +42,6 @@ top: 50%;
 left: 5%;
 position : absolute; 
 ${phoneQuery`
- left: 100%
-
+ left: 90%
   `}
 `;

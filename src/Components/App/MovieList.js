@@ -8,15 +8,16 @@ import {
   Paging,
   PagingArrow,
   Paginate,
-} from '../StyledComponents/MovieList/Paging';
+} from '../StyledComponents/Paging/Paging';
 import {
   ListContainer,
-  MovieBox,
-  ThumbMovie,
-  MovieTitle,
-  MovieDate,
-  H1,
-} from '../StyledComponents/MovieList/MovieList';
+  MovieBoxLi,
+  ThumbMovieLi,
+  MovieTitleLi,
+  MovieDateLi,
+  H1Li,
+  ListBlock,
+} from '../StyledComponents/MovieList/MovieListStyles';
 
 const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
@@ -47,20 +48,22 @@ const MovieList = ({ submitedSearch }) => {
 
   return (
     <>
-      <H1>{`${isSearch}`}</H1>
+      <ListBlock>
+      <H1Li>{`${isSearch}`}</H1Li>
       <ListContainer>
         {movies && movies.map((movie) => (
           <>
-            <MovieBox>
-              <ThumbMovie marginTop="2rem" marginRight="3rem" marginLeft="3rem" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
-              <MovieTitle>{movie.title}</MovieTitle>
-              <MovieDate>
+            <MovieBoxLi>
+              <ThumbMovieLi marginTop="2rem" marginRight="3rem" marginLeft="3rem" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
+              <MovieTitleLi>{movie.title}</MovieTitleLi>
+              <MovieDateLi>
                 {getYear(movie.release_date)}
-              </MovieDate>
-            </MovieBox>
+              </MovieDateLi>
+            </MovieBoxLi>
           </>
         ))}
       </ListContainer>
+      </ListBlock>
 
       {movies && (
         <Paginate>

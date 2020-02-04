@@ -2,13 +2,12 @@
 import { css } from '@emotion/core';
 
 const breakpoints = {
-  phoneSize: 1000,
+  phoneSize: 376,
 };
 
 const phoneRule = `(max-width: ${breakpoints.phoneSize - 1}px)`;
 
 const mediaQueries = {
-// Reminder for "specified size "  => sizeName: `@media screen and ${mediumRule} and ${mediumDownRule}`,
   phone: `@media screen and ${phoneRule}`,
 };
 

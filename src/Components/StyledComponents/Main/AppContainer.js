@@ -8,10 +8,12 @@ background-color: ${((props) => props.theme.colors.darkBlue)};
 max-width: 100vw;
 position: relative;
 font-family: 'Roboto', sans-serif;
+line-height: 17px; 
+font-size: 14px; 
 
 ${phoneQuery`
-font-size: 0.8rem;
-max-width: 100vw;
+font-size: 1rem;
+overflow: hidden;
   `}
 `;
 
