@@ -2,41 +2,41 @@ import styled from '@emotion/styled';
 import { phoneQuery } from '../../../styles/media-queries';
 
 export const ThumbMovie = styled.img`
-width: 138px;
-height: 200px;
+width: 60%;
+margin-left: 20%;
 border-radius: 25px; 
 align-self: center;
 
 ${phoneQuery`
-width : 86px;
-height: 124px;
-align-self: center;
-margin-right: 0; 
+margin-left: 0;
+margin-right: 10%;
+width: 80%;
   `}
 `;
 
 export const MovieBox = styled.div`
-width: 138px;
-height: 243px;
-padding-top: 2em;
-margin-bottom: 10%;
+padding-top: 2rem;
 ${phoneQuery`
-height: 167px;
-width : 86px;
+margin-top: 2em;
+padding-top: 0;
+width: 100%;
+height: 100%;
   `}
 `;
 
 export const MovieTitle = styled.p`
 color: ${(props) => props.theme.colors.white};
 text-align: left;
-max-height: 1em;
 font-weight: 700;
+margin-top: 5%;
+margin-left: 20%;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
 ${phoneQuery`
-margin-top:.5rem;
-width: 100%;
-min-width: 100px;
 font-size: 14px; 
 line-height: 17px;
+margin-left: 0;
   `}
 `;
 
@@ -45,8 +45,10 @@ font-size: 12px;
 line-height: 14px;
 color: ${(props) => props.theme.colors.offWhite};
 margin-top: 0.7rem; 
+margin-left: 20%;
 ${phoneQuery`
 margin-top:.3rem;
+margin-left: 0;
   `}
 `;
 

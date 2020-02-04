@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const BgImg = styled.div`
 width: 100%;
-height: 30%;
+height: 100%;
 position: absolute;
 top: 0;
 left: 0;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import AppContainer from '../StyledComponents/Main/AppContainer';
-import Header from './Header';
-import MovieList from './MovieList';
-import SliderBestMovies from './SliderBestMovies';
+import Header from '../Header/Header';
+import MovieList from '../MovieList/MovieList';
+import SliderBestMovies from '../Slider/Slider';
 import BgImg from '../StyledComponents/Main/BgImg';
 import Sizer from '../StyledComponents/Main/Sizer';
 

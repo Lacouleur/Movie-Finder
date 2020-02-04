@@ -3,23 +3,35 @@ import Slider from 'react-slick';
 import { SliderContainer } from '../StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
 import { getBestMovies } from '../../services/client';
 import { getYear } from '../../services/helper';
-import { ThumbMovie, MovieTitle, MovieDate, MovieBox, H1 } from '../StyledComponents/Commons/Thumbs';
+import {
+  ThumbMovie, MovieTitle, MovieDate, MovieBox, H1,
+} from '../StyledComponents/Commons/Thumbs';
 import settings from '../../services/sliderSettings';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 const SliderBestMovies = () => {
   const [bestMovies, setBestMovies] = useState();
+  let slider;
 
   useEffect(() => {
     getBestMovies().then(setBestMovies);
   }, []);
 
+  const horizontalScroll = (e) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      slider.slickNext();
+    } else {
+      slider.slickPrev();
+    }
+  };
+
   return (
     <>
-      <SliderContainer>
-        <H1>Les 10 meilleurs films</H1>
-        <Slider {...settings}>
+      <H1>Les 10 meilleurs films</H1>
+      <SliderContainer onWheel={horizontalScroll}>
+        <Slider {...settings} ref={(slick) => { slider = slick; }}>
           {bestMovies && bestMovies.map((movie) => (
             <MovieBox>
               <ThumbMovie src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />

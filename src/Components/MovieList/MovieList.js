@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
-
 import { searchForMovie, discoverMovies } from '../../services/client';
-import { getYear } from '../../services/helper';
+import { getYear, handleSpliceResults } from '../../services/helper';
 import {
   Paging,
   PagingArrow,
@@ -23,6 +22,7 @@ const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
   const [pagingInfos, setPagingInfos] = useState();
   const [isSearch, setIsSearch] = useState('Tous les films');
+  const BaseUrl = 'https://image.tmdb.org/t/p/w370_and_h556_bestv2';
 
   useEffect(() => {
     if (submitedSearch !== '') {
@@ -39,31 +39,23 @@ const MovieList = ({ submitedSearch }) => {
     }
   }, [submitedSearch]);
 
-  const handlePageClick = (data) => {
-    discoverMovies(data.selected + 1 ).then((res) => {
-      console.log(data.selected);
-      setPagingInfos(res);
-      setMovies(res.results.slice(0, 11));
-    });
-  };
-
   return (
     <>
       <ListBlock>
-      <H1Li>{`${isSearch}`}</H1Li>
-      <ListContainer>
-        {movies && movies.map((movie) => (
-          <>
-            <MovieBoxLi>
-              <ThumbMovieLi marginTop="2rem" marginRight="3rem" marginLeft="3rem" src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
-              <MovieTitleLi>{movie.title}</MovieTitleLi>
-              <MovieDateLi>
-                {getYear(movie.release_date)}
-              </MovieDateLi>
-            </MovieBoxLi>
-          </>
-        ))}
-      </ListContainer>
+        <H1Li>{`${isSearch}`}</H1Li>
+        <ListContainer>
+          {movies && movies.map((movie) => (
+            <>
+              <MovieBoxLi>
+                <ThumbMovieLi src={`${BaseUrl}${movie.backdrop_path}`} />
+                <MovieTitleLi>{movie.title}</MovieTitleLi>
+                <MovieDateLi>
+                  {getYear(movie.release_date)}
+                </MovieDateLi>
+              </MovieBoxLi>
+            </>
+          ))}
+        </ListContainer>
       </ListBlock>
 
       {movies && (
@@ -78,7 +70,7 @@ const MovieList = ({ submitedSearch }) => {
             pageCount={pagingInfos.total_pages}
             marginPagesDisplayed={0}
             pageRangeDisplayed={10}
-            onPageChange={handlePageClick}
+            onPageChange={(data) => handleSpliceResults(data, setPagingInfos, setMovies)}
             initialPage={0}
           />
         </Paginate>

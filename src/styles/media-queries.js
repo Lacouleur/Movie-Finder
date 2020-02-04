@@ -17,4 +17,3 @@ const mediaQuery = (size) => (...args) => css`
   }
 `;
 export const phoneQuery = mediaQuery('phone');
-

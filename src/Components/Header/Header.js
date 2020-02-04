@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {HeaderContainer, Logo} from '../StyledComponents/Header/Header';
+import { HeaderContainer, Logo } from '../StyledComponents/Header/Header';
 import { SearchBar, Form, SearchIcon } from '../StyledComponents/Header/SearchBar';
 
 const Header = ({ handleSubmit, setSearch }) => (

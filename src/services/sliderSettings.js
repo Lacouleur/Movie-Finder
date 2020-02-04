@@ -3,7 +3,7 @@ import { Arrow } from '../Components/StyledComponents/SliderBestMovies/SliderBes
 
 const settings = {
   dots: false,
-  infinite: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,

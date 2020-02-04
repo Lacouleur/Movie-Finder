@@ -20,8 +20,9 @@ ${phoneQuery`
 
 export const Logo = styled.img`
   justify-self: flex-end; 
-  width: 219.49px;
+  margin-bottom: 2rem;
+  width: 219px;
   ${phoneQuery`
-    width: 181.58px;
+    width: 181px;
   `}
 `;
