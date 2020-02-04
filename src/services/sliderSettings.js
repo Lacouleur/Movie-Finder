@@ -18,7 +18,6 @@ const settings = {
     {
       breakpoint: 1000,
       settings: {
-        slidesToShow: 3,
         swipe: true,
       },
     },

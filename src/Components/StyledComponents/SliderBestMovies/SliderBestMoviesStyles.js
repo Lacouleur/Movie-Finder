@@ -2,8 +2,11 @@ import styled from '@emotion/styled';
 import { phoneQuery } from '../../../styles/media-queries';
 
 export const SliderContainer = styled.div`
-width: 80%;   
-margin: 2rem 10% 4rem 10%;
+.slick-initialized .slick-slide{
+    display: flex;
+    justify-content: center;
+};
+width: 100%;   
 padding-bottom: 5%; 
 margin-bottom:5%;
 border-bottom: 2px solid ${(props) => props.theme.colors.offWhite};
@@ -21,7 +24,7 @@ export const H1 = styled.h1`
 font-size: 2.5vmin;
 color : ${(props) => props.theme.colors.white};
 ${phoneQuery`
-padding-left: 10%;
+    width: 404px;
 `};
 `;
 
