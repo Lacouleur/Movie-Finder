@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { discoverMovies } from './client';
+import { discoverMovies, MoviesByType } from './client';
 import { BaseImagesUrl, DefaultImg } from './settings/globalSettings';
 
 export const getYear = (DateStringToTransform) => {
@@ -27,3 +27,11 @@ export const checkPath = (path) => {
   }
   return (`${DefaultImg}`);
 };
+
+
+export const onChangeType = (e, setMovies) => (
+  ((e.value !== '0')
+    ? setMovies(MoviesByType(e.value))
+    : setMovies(discoverMovies())
+  )
+);
