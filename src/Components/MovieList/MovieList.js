@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { searchForMovie, discoverMovies } from '../../services/client';
 import { H1Li, ListBlock } from '../StyledComponents/MovieList/MovieListStyles';
-import MovieListContainer from './ListContainer';
+import MovieListContainer from './MovieListContainer';
 import Paginate from './Paginate';
 
 const MovieList = ({ submitedSearch }) => {
@@ -32,13 +32,13 @@ const MovieList = ({ submitedSearch }) => {
     <ListBlock>
       <H1Li>{`${isSearch}`}</H1Li>
       {movies && (
-      <MovieListContainer movies={movies} />
-      )}
-      {pagingInfos && (
-      <Paginate
-        pagingInfos={pagingInfos}
-        setMovies={setMovies}
-      />
+        <>
+          <MovieListContainer movies={movies} />
+          <Paginate
+            pagingInfos={pagingInfos}
+            setMovies={setMovies}
+          />
+        </>
       )}
     </ListBlock>
   );

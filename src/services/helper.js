@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { discoverMovies } from './client';
+import { BaseImagesUrl, DefaultImg } from './globalSettings';
 
 export const getYear = (DateStringToTransform) => {
   const DateConverted = new Date(DateStringToTransform);
@@ -18,4 +19,11 @@ export const handleSpliceResults = (data, setMovies) => {
         setMovies(res.results.slice(10, 20));
       });
   }
+};
+
+export const checkPath = (path) => {
+  if (path) {
+    return (`${BaseImagesUrl}${path}`);
+  }
+  return (`${DefaultImg}`);
 };

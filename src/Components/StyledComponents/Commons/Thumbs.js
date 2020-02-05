@@ -3,6 +3,7 @@ import { phoneQuery } from '../../../styles/media-queries';
 
 export const ThumbMovie = styled.img`
 width: 60%;
+height:70%;
 margin-left: 20%;
 border-radius: 25px; 
 align-self: center;

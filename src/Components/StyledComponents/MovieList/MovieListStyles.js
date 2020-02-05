@@ -39,7 +39,6 @@ height: 243px;
   `}
 `;
 
-
 export const ThumbMovieLi = styled(ThumbMovie)`
 width: 100%;
 margin: 0;
