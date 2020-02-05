@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { discoverMovies } from './client';
-import { BaseImagesUrl, DefaultImg } from './globalSettings';
+import { BaseImagesUrl, DefaultImg } from './settings/globalSettings';
 
 export const getYear = (DateStringToTransform) => {
   const DateConverted = new Date(DateStringToTransform);

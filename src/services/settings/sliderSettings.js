@@ -1,5 +1,5 @@
 import React from 'react';
-import { Arrow } from '../Components/StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
+import { Arrow } from '../../Components/StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
 
 const settings = {
   dots: false,

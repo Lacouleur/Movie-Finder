@@ -33,6 +33,7 @@ text-align: left;
 font-weight: 400;
 margin-top: 5%;
 margin-left: 20%;
+width: 60%;
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
@@ -60,4 +61,11 @@ ${phoneQuery`
 font-size: 16px; 
 line-height: 19px;
   `}
+`;
+
+export const P = styled.span`
+font-size: 12px; 
+line-height: 14px;
+color: ${(props) => props.theme.colors.offWhite};
+display: inline; 
 `;

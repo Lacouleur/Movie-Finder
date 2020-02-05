@@ -7,7 +7,7 @@ import { getYear } from '../../services/helper';
 import {
   ThumbMovie, MovieTitle, MovieDate, MovieBox, H1,
 } from '../StyledComponents/Commons/Thumbs';
-import settings from '../../services/sliderSettings';
+import settings from '../../services/settings/sliderSettings';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 

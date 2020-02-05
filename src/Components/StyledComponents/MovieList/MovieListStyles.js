@@ -21,7 +21,7 @@ ${phoneQuery`
 
 export const ListContainer = styled.div`
 height: 100%;
-margin : 2rem auto;
+margin : 1em auto;
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
@@ -50,6 +50,7 @@ height: 200px;
 
 export const MovieTitleLi = styled(MovieTitle)`
 margin-left: 0;
+width: 100%;
 `;
 
 export const H1Li = styled(H1)`

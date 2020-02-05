@@ -4,6 +4,7 @@ import { searchForMovie, discoverMovies } from '../../services/client';
 import { H1Li, ListBlock } from '../StyledComponents/MovieList/MovieListStyles';
 import MovieListContainer from './MovieListContainer';
 import Paginate from './Paginate';
+import SortButtons from '../SortButtons/SortButtons';
 
 const MovieList = ({ submitedSearch }) => {
   const [movies, setMovies] = useState();
@@ -31,6 +32,7 @@ const MovieList = ({ submitedSearch }) => {
   return (
     <ListBlock>
       <H1Li>{`${isSearch}`}</H1Li>
+      <SortButtons setMovies={setMovies} />
       {movies && (
         <>
           <MovieListContainer movies={movies} />
