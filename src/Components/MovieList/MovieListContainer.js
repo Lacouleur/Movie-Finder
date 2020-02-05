@@ -13,7 +13,7 @@ import {
 const MovieListContainer = ({ movies }) => (
   <ListContainer>
     {movies.map((movie) => (
-      <MovieBoxLi key={movie.overview}>
+      <MovieBoxLi key={`${movie.overview}${movie.id}`}>
         <ThumbMovieLi
           src={checkPath(movie.backdrop_path)}
           alt={movie.title}

@@ -16,7 +16,7 @@ export const handleSpliceResults = (data, setMovies) => {
   } else {
     discoverMovies((data.selected + 1))
       .then((res) => {
-        setMovies(res.results.slice(10, 20));
+        setMovies(res.results.slice(9, 19));
       });
   }
 };
