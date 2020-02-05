@@ -16,7 +16,7 @@ const MovieList = ({ submitedSearch }) => {
       searchForMovie(submitedSearch)
         .then((res) => {
           setPagingInfos(res.total_pages);
-          setMovies(setMovies(res.results.slice(0, 10)));
+          setMovies(res.results.slice(0, 10));
           setIsSearch('Recherche :');
         });
     } else {
