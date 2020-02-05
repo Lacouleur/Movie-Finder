@@ -13,7 +13,6 @@ const MovieList = ({ submitedSearch }) => {
 
   useEffect(() => {
     if (submitedSearch !== '') {
-      setMovies();
       searchForMovie(submitedSearch)
         .then((res) => {
           setPagingInfos(res.total_pages);
@@ -21,7 +20,6 @@ const MovieList = ({ submitedSearch }) => {
           setIsSearch('Recherche :');
         });
     } else {
-      setMovies();
       discoverMovies()
         .then((res) => {
           setPagingInfos(res.total_pages);
@@ -29,7 +27,6 @@ const MovieList = ({ submitedSearch }) => {
         });
     }
   }, [submitedSearch]);
-console.log(movies);
 
   return (
     <ListBlock>
