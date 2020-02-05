@@ -24,7 +24,6 @@ export const customStyles = {
     margin: 0,
     padding: 0,
     borderRadius: state.menuIsOpen ? '25px 25px 0 0' : '25px',
-
   }),
   valueContainer: (base, state) => ({
     background: state.isFocused ? theme.colors.grey : 'hidden',
