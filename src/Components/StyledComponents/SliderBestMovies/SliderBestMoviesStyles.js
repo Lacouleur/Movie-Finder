@@ -35,6 +35,8 @@ border-radius: 50%;
 padding: 3px;
 width: 6vmin;
 height: 6vmin;
+min-width: 40px;
+min-height: 40px;
     ${phoneQuery`
     width: 0; 
     height: 0;

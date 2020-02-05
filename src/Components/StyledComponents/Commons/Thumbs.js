@@ -26,16 +26,16 @@ height: 100%;
 
 export const MovieTitle = styled.p`
 color: ${(props) => props.theme.colors.white};
+font-size: 14px; 
+line-height: 17px;
 text-align: left;
-font-weight: 700;
+font-weight: 400;
 margin-top: 5%;
 margin-left: 20%;
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
 ${phoneQuery`
-font-size: 14px; 
-line-height: 17px;
 margin-left: 0;
   `}
 `;
@@ -44,7 +44,6 @@ export const MovieDate = styled.p`
 font-size: 12px; 
 line-height: 14px;
 color: ${(props) => props.theme.colors.offWhite};
-margin-top: 0.7rem; 
 margin-left: 20%;
 ${phoneQuery`
 margin-top:.3rem;

@@ -62,7 +62,7 @@ a:focus {
     `}
 `;
 
-export const Paging = styled.li`
+export const Paging = styled.div`
 width:2.5em;
 height:2.5em;
 padding: auto;

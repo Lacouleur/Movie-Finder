@@ -11,7 +11,6 @@ import { handleSpliceResults } from '../../services/helper';
 const Paginate = (
   {
     pagingInfos,
-    setPagingInfos,
     setMovies,
   },
 ) => (
@@ -23,21 +22,16 @@ const Paginate = (
       containerClassName="pagingContainer"
       pageLinkClassName="pagingText"
       activeClassName="pagingBox-activePage"
-      pageCount={pagingInfos.total_pages}
+      pageCount={pagingInfos}
       marginPagesDisplayed={0}
       pageRangeDisplayed={10}
-      onPageChange={(data) => handleSpliceResults(data, setPagingInfos, setMovies)}
+      onPageChange={(data) => handleSpliceResults(data, setMovies)}
       initialPage={0}
     />
   </PaginateStyle>
 );
-
 Paginate.propTypes = {
-  pagingInfos: PropTypes.shape({
-    page: PropTypes.string,
-    total_pages: PropTypes.number,
-  }).isRequired,
-  setPagingInfos: PropTypes.func.isRequired,
+  pagingInfos: PropTypes.number.isRequired,
   setMovies: PropTypes.func.isRequired,
 };
 

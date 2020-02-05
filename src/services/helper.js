@@ -6,22 +6,16 @@ export const getYear = (DateStringToTransform) => {
   return DateConverted.getFullYear();
 };
 
-export const handleSpliceResults = (data, setPagingInfos, setMovies) => {
+export const handleSpliceResults = (data, setMovies) => {
   if ((data.selected + 1) % 2 !== 0) {
-    discoverMovies((data.selected + 1)).then((res) => {
-      setPagingInfos({
-        page: res.page,
-        total_pages: res.total_pages,
+    discoverMovies((data.selected + 1))
+      .then((res) => {
+        setMovies(res.results.slice(0, 10));
       });
-      setMovies(res.results.slice(0, 10));
-    });
   } else {
-    discoverMovies((data.selected + 1)).then((res) => {
-      setPagingInfos({
-        page: res.page,
-        total_pages: res.total_pages,
+    discoverMovies((data.selected + 1))
+      .then((res) => {
+        setMovies(res.results.slice(10, 20));
       });
-      setMovies(res.results.slice(10, 20));
-    });
   }
 };

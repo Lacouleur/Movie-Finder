@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
+import React from 'react';
 import Select from 'react-select';
 
 const SortButtons = () => {

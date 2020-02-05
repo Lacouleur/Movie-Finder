@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { SliderContainer } from '../StyledComponents/SliderBestMovies/SliderBestMoviesStyles';
@@ -33,7 +34,7 @@ const SliderBestMovies = () => {
       <SliderContainer onWheel={horizontalScroll}>
         <Slider {...settings} ref={(slick) => { slider = slick; }}>
           {bestMovies && bestMovies.map((movie) => (
-            <MovieBox>
+            <MovieBox key={movie.title}>
               <ThumbMovie src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${movie.backdrop_path}`} />
               <MovieTitle>{movie.title}</MovieTitle>
               <MovieDate>

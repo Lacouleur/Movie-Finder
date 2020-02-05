@@ -15,7 +15,7 @@ const MovieListContainer = ({ movies }) => {
   return (
     <ListContainer>
       {movies.map((movie) => (
-        <MovieBoxLi>
+        <MovieBoxLi key={movie.backdrop_path}>
           <ThumbMovieLi
             src={`${BaseUrl}${movie.backdrop_path}`}
           />
